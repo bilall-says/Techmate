@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#112B5F" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#0B1D3A" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#071428" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Holographic Blue Gradients -->
+    <linearGradient id="holoGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4DA8FF" stop-opacity="0.75"/>
+      <stop offset="35%" stop-color="#1E63F3" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#112B5F" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#4DA8FF" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <linearGradient id="visorscreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#061224"/>
+      <stop offset="50%" stop-color="#091A33"/>
+      <stop offset="100%" stop-color="#061224"/>
+    </linearGradient>
+
+    <linearGradient id="cyanNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#4DA8FF"/>
+      <stop offset="100%" stop-color="#1E63F3"/>
+    </linearGradient>
+
+    <linearGradient id="techmateBars" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E63F3"/>
+      <stop offset="100%" stop-color="#4DA8FF"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="electricGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softAura" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient Backdrop Aura -->
+  <circle cx="200" cy="180" r="140" fill="#1E63F3" opacity="0.25" filter="url(#softAura)"/>
+  <circle cx="200" cy="170" r="90" fill="#4DA8FF" opacity="0.2" filter="url(#softAura)"/>
+
+  <!-- Pedestal Base Rings -->
+  <g opacity="0.65" transform="translate(0, 100)">
+    <ellipse cx="200" cy="240" rx="140" ry="32" fill="none" stroke="#1E63F3" stroke-width="2" stroke-dasharray="6 6"/>
+    <ellipse cx="200" cy="240" rx="110" ry="24" fill="none" stroke="#4DA8FF" stroke-width="3" filter="url(#electricGlow)"/>
+    <ellipse cx="200" cy="240" rx="75" ry="16" fill="#112B5F" fill-opacity="0.4" stroke="#4DA8FF" stroke-width="1.5"/>
+  </g>
+
+  <!-- Main TechMate AI Character -->
+  <g id="robot-character">
+    <!-- Floating Antenna Cubes (Ascending Data Blocks) -->
+    <g id="floating-cubes" filter="url(#electricGlow)">
+      <!-- Cube 1 (Bottom) -->
+      <g transform="translate(245, 68)">
+        <polygon points="12,0 24,7 12,14 0,7" fill="#4DA8FF" opacity="0.95"/>
+        <polygon points="0,7 12,14 12,28 0,21" fill="#1E63F3" opacity="0.85"/>
+        <polygon points="12,14 24,7 24,21 12,28" fill="#112B5F" opacity="0.9"/>
+      </g>
+      <!-- Cube 2 -->
+      <g transform="translate(262, 50)">
+        <polygon points="10,0 20,6 10,12 0,6" fill="#60B5FF"/>
+        <polygon points="0,6 10,12 10,24 0,18" fill="#1E63F3"/>
+        <polygon points="10,12 20,6 20,18 10,24" fill="#0B1D3A"/>
+      </g>
+      <!-- Cube 3 -->
+      <g transform="translate(278, 32)">
+        <polygon points="9,0 18,5 9,10 0,5" fill="#4DA8FF"/>
+        <polygon points="0,5 9,10 9,20 0,15" fill="#1E63F3"/>
+        <polygon points="9,10 18,5 18,15 9,20" fill="#112B5F"/>
+      </g>
+      <!-- Cube 4 (Top) -->
+      <g transform="translate(292, 16)">
+        <polygon points="7,0 14,4 7,8 0,4" fill="#FFFFFF"/>
+        <polygon points="0,4 7,8 7,16 0,12" fill="#4DA8FF"/>
+        <polygon points="7,8 14,4 14,12 7,16" fill="#1E63F3"/>
+      </g>
+    </g>
+
+    <!-- Torso & Arms -->
+    <g id="body">
+      <!-- Neck joint -->
+      <rect x="184" y="200" width="32" height="14" rx="4" fill="#112B5F" stroke="#4DA8FF" stroke-width="2"/>
+      
+      <!-- Torso Box -->
+      <rect x="145" y="212" width="110" height="96" rx="18" fill="#0B1D3A" stroke="#4DA8FF" stroke-width="3" filter="url(#electricGlow)"/>
+      <rect x="150" y="217" width="100" height="86" rx="14" fill="url(#holoGlass)" fill-opacity="0.3"/>
+
+      <!-- Internal Tech Circuits -->
+      <path d="M 152 230 L 170 230 L 175 242" stroke="#4DA8FF" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <path d="M 248 230 L 230 230 L 225 242" stroke="#4DA8FF" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+      <!-- Centered Official TECHMATE Brand Icon on Chest -->
+      <g id="chest-techmate-logo" transform="translate(172, 236)" filter="url(#electricGlow)">
+        <!-- 4 Rising Vertical Blocks -->
+        <rect x="4" y="26" width="10" height="14" rx="2.5" fill="#4DA8FF"/>
+        <rect x="17" y="18" width="10" height="22" rx="2.5" fill="#4DA8FF"/>
+        <rect x="30" y="10" width="10" height="30" rx="2.5" fill="#1E63F3"/>
+        <rect x="43" y="2" width="10" height="38" rx="2.5" fill="url(#cyanNeon)"/>
+      </g>
+
+      <!-- Left Arm (Resting) -->
+      <g id="left-arm">
+        <circle cx="132" cy="228" r="12" fill="#112B5F" stroke="#4DA8FF" stroke-width="2.5"/>
+        <path d="M 130 238 C 122 255, 120 280, 128 300" stroke="#4DA8FF" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <circle cx="129" cy="304" r="8" fill="#4DA8FF" filter="url(#electricGlow)"/>
+      </g>
+
+      <!-- Right Arm (Waving Hello) -->
+      <g id="right-arm" filter="url(#electricGlow)">
+        <circle cx="268" cy="228" r="12" fill="#112B5F" stroke="#4DA8FF" stroke-width="2.5"/>
+        <path d="M 272 225 C 295 210, 310 185, 305 160" stroke="#4DA8FF" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <!-- Hand Waving -->
+        <circle cx="305" cy="155" r="11" fill="#112B5F" stroke="#4DA8FF" stroke-width="2"/>
+        <!-- 4 Cute Glowing Robotic Fingers -->
+        <rect x="296" y="138" width="4" height="12" rx="2" fill="#FFFFFF"/>
+        <rect x="302" y="134" width="4" height="14" rx="2" fill="#4DA8FF"/>
+        <rect x="308" y="136" width="4" height="13" rx="2" fill="#4DA8FF"/>
+        <rect x="314" y="142" width="4" height="10" rx="2" fill="#1E63F3"/>
+      </g>
+    </g>
+
+    <!-- Head & Audio Ears -->
+    <g id="head-group">
+      <!-- Left Holographic Ear Earpiece -->
+      <g id="left-ear">
+        <rect x="86" y="112" width="18" height="42" rx="7" fill="#112B5F" stroke="#4DA8FF" stroke-width="2.5"/>
+        <circle cx="95" cy="133" r="11" fill="#0B1D3A" stroke="#4DA8FF" stroke-width="2"/>
+        <circle cx="95" cy="133" r="6" fill="#1E63F3" opacity="0.8"/>
+        <circle cx="95" cy="133" r="2.5" fill="#FFFFFF" filter="url(#electricGlow)"/>
+      </g>
+
+      <!-- Right Holographic Ear Earpiece -->
+      <g id="right-ear">
+        <rect x="296" y="112" width="18" height="42" rx="7" fill="#112B5F" stroke="#4DA8FF" stroke-width="2.5"/>
+        <circle cx="305" cy="133" r="11" fill="#0B1D3A" stroke="#4DA8FF" stroke-width="2"/>
+        <circle cx="305" cy="133" r="6" fill="#1E63F3" opacity="0.8"/>
+        <circle cx="305" cy="133" r="2.5" fill="#FFFFFF" filter="url(#electricGlow)"/>
+      </g>
+
+      <!-- Outer Holographic Glass Head (Cube with Rounded Chamfers) -->
+      <rect x="100" y="68" width="200" height="136" rx="36" fill="url(#holoGlass)" stroke="#4DA8FF" stroke-width="4" filter="url(#electricGlow)"/>
+
+      <!-- Inner Holographic Border Chamfers -->
+      <rect x="106" y="74" width="188" height="124" rx="30" fill="none" stroke="#60B5FF" stroke-width="1.5" opacity="0.5"/>
+
+      <!-- Digital Visor Screen (Dark Glossy Curved Display) -->
+      <rect x="118" y="86" width="164" height="100" rx="22" fill="url(#visorscreen)" stroke="#1E63F3" stroke-width="2"/>
+
+      <!-- Top Glass Sheen / Reflection -->
+      <path d="M 124 92 Q 200 102 276 92 C 276 92 274 112 260 114 Q 200 110 140 114 Z" fill="#FFFFFF" opacity="0.12"/>
+
+      <!-- Glowing Face Features (Happy Expression) -->
+      <g id="face-features" filter="url(#electricGlow)">
+        <!-- Left Glowing Cyan Eye -->
+        <rect x="150" y="116" width="18" height="26" rx="8" fill="#FFFFFF"/>
+        <rect x="148" y="114" width="22" height="30" rx="10" fill="none" stroke="#4DA8FF" stroke-width="2.5"/>
+
+        <!-- Right Glowing Cyan Eye -->
+        <rect x="232" y="116" width="18" height="26" rx="8" fill="#FFFFFF"/>
+        <rect x="230" y="114" width="22" height="30" rx="10" fill="none" stroke="#4DA8FF" stroke-width="2.5"/>
+
+        <!-- Cheerful Curved Cyan Mouth -->
+        <path d="M 184 154 Q 200 166 216 154" stroke="#4DA8FF" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+        <path d="M 186 154 Q 200 164 214 154" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

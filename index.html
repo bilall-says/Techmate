@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Prevent browser extension conflicts (e.g. MetaMask, Rabby, Coinbase Wallet throwing "Cannot redefine property: ethereum")
+      (function() {
+        try {
+          window.addEventListener('error', function(event) {
+            if (event && event.message && event.message.toLowerCase().includes('ethereum')) {
+              event.preventDefault();
+              event.stopImmediatePropagation();
+              return true;
+            }
+          }, true);
+
+          window.addEventListener('unhandledrejection', function(event) {
+            var reason = event && event.reason ? String(event.reason) : '';
+            if (reason.toLowerCase().includes('ethereum')) {
+              event.preventDefault();
+              event.stopImmediatePropagation();
+              return true;
+            }
+          }, true);
+
+          var origDefineProperty = Object.defineProperty;
+          Object.defineProperty = function(target, prop, descriptor) {
+            if (target === window && prop === 'ethereum') {
+              try {
+                return origDefineProperty.call(Object, target, prop, Object.assign({}, descriptor, {
+                  configurable: true,
+                  writable: true
+                }));
+              } catch (e) {
+                // If it fails to redefine, safely fallback without throwing fatal TypeError
+                try {
+                  if (descriptor && 'value' in descriptor) {
+                    target.ethereum = descriptor.value;
+                  }
+                } catch (_) {}
+                return target;
+              }
+            }
+            try {
+              return origDefineProperty.call(Object, target, prop, descriptor);
+            } catch (err) {
+              if (prop === 'ethereum') {
+                return target;
+              }
+              throw err;
+            }
+          };
+        } catch (_) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TECHMATE — Software Development Company | Pakistan &amp; Global</title>
+    <meta name="description" content="TECHMATE is a premier Pakistani software development house engineering custom web, mobile, cloud, and AI solutions for startups and enterprises worldwide." />
+    <meta name="keywords" content="software house Pakistan, custom software development Lahore, IT company Pakistan, web development Karachi, mobile app development Islamabad, React Next.js developers, Flutter apps Pakistan, enterprise cloud solutions, tech agency PKR" />
+    <meta name="author" content="TECHMATE" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0B1D3A" />
+
+    <!-- Canonical & Alternates -->
+    <link rel="canonical" href="https://techmate.pk/" />
+    <link rel="alternate" hreflang="en" href="https://techmate.pk/?lang=en" />
+    <link rel="alternate" hreflang="ur" href="https://techmate.pk/?lang=ur" />
+    <link rel="alternate" hreflang="x-default" href="https://techmate.pk/" />
+
+    <!-- Geo Targeting for Pakistan & Regional Hubs -->
+    <meta name="geo.region" content="PK" />
+    <meta name="geo.placename" content="Lahore, Islamabad, Karachi, Pakistan" />
+    <meta name="geo.position" content="31.5204;74.3587" />
+    <meta name="ICBM" content="31.5204, 74.3587" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TECHMATE" />
+    <meta property="og:title" content="TECHMATE — Building Software. Creating Possibilities." />
+    <meta property="og:description" content="Leading Pakistani technology partner engineering modern web, mobile, cloud, and AI platforms for high-growth businesses worldwide." />
+    <meta property="og:url" content="https://techmate.pk/" />
+    <meta property="og:locale" content="en_PK" />
+    <meta property="og:locale:alternate" content="ur_PK" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="TECHMATE Software House Preview" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@techmatepk" />
+    <meta name="twitter:creator" content="@techmatepk" />
+    <meta name="twitter:title" content="TECHMATE — Software Engineering &amp; Cloud Solutions" />
+    <meta name="twitter:description" content="Transforming ambitious concepts into production-grade digital realities with agile engineering and high-velocity sprints in Pakistan." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop" />
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "TECHMATE",
+      "alternateName": "Techmate Software House",
+      "url": "https://techmate.pk/",
+      "logo": "https://techmate.pk/logo.png",
+      "description": "Custom Software Development, Web Applications, Mobile App Development, UI/UX Design, and Cloud Solutions based in Pakistan.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PK",
+        "addressRegion": "Punjab",
+        "addressLocality": "Lahore"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "31.5204",
+        "longitude": "74.3587"
+      },
+      "currenciesAccepted": "PKR, USD, EUR, GBP",
+      "paymentAccepted": "Bank Transfer, Raast, Wire Transfer",
+      "priceRange": "PKR 50,000 - PKR 1,000,000+",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Pakistan"
+        },
+        {
+          "@type": "GeoCircle",
+          "name": "Global Remote Delivery"
+        }
+      ],
+      "knowsAbout": [
+        "React",
+        "Next.js",
+        "Flutter",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "Cloud Computing",
+        "AI Solutions"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "sheikhbilal04888@gmail.com",
+        "telephone": "+923224787839",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Urdu"]
+      }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#0B1D3A] text-white font-['Poppins',sans-serif] antialiased selection:bg-[#1E63F3] selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

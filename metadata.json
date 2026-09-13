@@ -1,0 +1,6 @@
+{
+  "name": "TECHMATE",
+  "description": "Building Software. Creating Possibilities. Modern technology partner transforming ideas into powerful digital products and software solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
